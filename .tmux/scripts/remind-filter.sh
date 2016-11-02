@@ -4,7 +4,7 @@
 IFS=$'\n'
 
 starttime=$(date +%H:%M)
-startdate=$(date +%Y/%m/%e)
+startdate=$(date +%Y/%m/%d)
 
 reminders=$(remind -b1 -n ~/.tmux/scripts/.reminders | sort |  awk  -v startday=${startdate} -v starttime=${starttime} '$1 > startday || ($1 == startday && $2 >= starttime)' |head -n 1)
 
